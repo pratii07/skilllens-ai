@@ -1,0 +1,22 @@
+.practice-topic-sidebar form{display:grid;gap:7px}
+.practice-topic-sidebar label{margin:0 0 1px}
+.practice-topic-sidebar input{min-height:34px}
+.practice-topic-sidebar button[type=submit]{width:100%;min-height:32px;border:0;border-radius:7px;padding:0 8px;background:#7169cb;color:#fff;font:700 10px 'DM Sans',sans-serif;cursor:pointer}
+.practice-topic-sidebar button[type=submit]:disabled{opacity:.45;cursor:not-allowed}
+.practice-topic-sidebar small{margin-top:0}
+.game-question-count{white-space:nowrap;color:#929baa}
+.practice-game-full .game-top h3{text-transform:capitalize}
+.practice-game-full .game-options button{min-height:43px;line-height:1.4}
+.practice-game-full .game-options button:disabled{cursor:default;opacity:1}
+.practice-intro .practice-topic-form{display:grid;gap:6px;margin:14px 0 12px}
+.practice-topic-form label{font-size:10px;font-weight:800;color:#697386}
+.practice-topic-form>div{display:flex;gap:7px}
+.practice-topic-form input{flex:1;min-width:0;height:38px;border:1px solid #dde3ec;border-radius:8px;padding:0 10px;font:12px 'DM Sans',sans-serif;color:#344052}
+.practice-topic-form button{height:38px;white-space:nowrap;font-size:10px}
+.practice-topic-form button:disabled{opacity:.5;cursor:not-allowed}
+.practice-topic-form small{font-size:9px;color:#929baa}
+.practice-exhausted{display:grid;gap:6px;margin-top:18px;padding:15px;border-radius:9px;background:#f7f8fb;color:#536070}
+.practice-exhausted strong{font-size:12px}
+.practice-exhausted span{font-size:10px;line-height:1.5;color:#7d8794}
+.game-feedback{margin:10px 0}
+@media(max-width:900px){.practice-topic-sidebar form{grid-template-columns:1fr auto;align-items:end}.practice-topic-sidebar label,.practice-topic-sidebar small{grid-column:1/-1}.practice-topic-sidebar button[type=submit]{width:auto}}

@@ -1,0 +1,85 @@
+.assessment-progress-card{grid-column:1;min-height:340px}
+.student-dashboard .assessment-progress-card{grid-column:1/-1;min-height:0;padding:20px;background:radial-gradient(ellipse at 90% 2%,rgba(20,139,255,.16),transparent 36%),linear-gradient(145deg,#07182b,#091426 58%,#0b1a2d)!important;border:1px solid #173858;box-shadow:0 0 0 1px rgba(17,111,199,.12),0 12px 34px rgba(5,23,42,.16)}
+.assessment-progress-card .eyebrow{color:#8da8c4!important;letter-spacing:1px}
+.assessment-progress-card .panel-head h3{color:#f1f7ff!important;font-size:18px;margin:5px 0 3px}
+.assessment-progress-card .graph-subtitle{color:#7890aa}
+.assessment-progress-card .panel-head>strong{color:#44c2ff!important;background:#0d2944;border:1px solid #174d78;border-radius:8px;padding:8px 11px;margin-top:1px}
+.assessment-progress-card .graph-trend-label{color:#8ba2bb}
+.assessment-progress-card .assessment-graph-wrap{margin-top:9px}
+.assessment-progress-card .assessment-graph{height:auto;min-height:250px;max-height:350px}
+.assessment-progress-card .graph-gridline{stroke:#a2c6e31a;stroke-width:1}
+.assessment-progress-card .graph-axis-label{fill:#8297ad}
+.assessment-progress-card .graph-bar{opacity:.48}
+.assessment-progress-card .graph-value{fill:#d7eaff}
+.assessment-progress-card .graph-assessment-label{fill:#8da3bb}
+.assessment-progress-card .graph-area{fill:url(#assessmentArea)}
+.assessment-progress-card .graph-trend-line{fill:none;stroke:#36baff;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.assessment-progress-card .graph-trend-point{fill:#eaf8ff;stroke:#43bfff;stroke-width:2}
+.assessment-progress-card .graph-trend-point-halo{fill:#138fea55;stroke:#41baff99;stroke-width:1}
+.assessment-graph-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:1px}
+.assessment-graph-metrics>div{min-width:0;min-height:67px;padding:10px 12px;border:1px solid #1c3550;border-radius:10px;background:linear-gradient(145deg,#10233a,#0b1b2e);display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:8px}
+.assessment-graph-metrics>div>span{grid-column:1/-1;color:#8298b0;font-size:8px;font-weight:800;letter-spacing:.65px}
+.assessment-graph-metrics strong{font-family:Manrope,sans-serif;font-size:17px;color:#edf7ff}
+.assessment-graph-metrics small{font-size:8px;color:#8195ad;text-align:right}
+.assessment-graph-metrics strong.metric-positive{color:#52dfa6}
+.assessment-graph-metrics strong.metric-negative{color:#ff7583}
+.assessment-progress-card .panel-head{height:auto;min-height:49px;align-items:flex-start;margin-bottom:8px}
+.assessment-progress-card .panel-head h3{margin:5px 0 3px}
+.assessment-progress-card .graph-subtitle{display:block;color:#8d97a6;font-size:10px}
+.assessment-progress-card .panel-head>strong{text-align:right;font-size:13px}
+.assessment-progress-card .graph-trend-label{display:block;color:#939cab;font-size:9px;font-weight:500;margin-top:3px}
+.assessment-graph-wrap{width:100%;overflow:hidden}
+.assessment-graph{display:block;width:100%;height:auto;min-height:190px;overflow:visible}
+.graph-gridline{stroke:#edf0f5;stroke-width:1}
+.graph-axis-label{fill:#98a1ae;font-size:10px;font-family:'DM Sans',sans-serif}
+.graph-bar{fill:#7097e8;opacity:.92}
+.graph-bar.latest{fill:#896de0}
+.graph-value{fill:#647286;font-size:10px;font-weight:700;font-family:'DM Sans',sans-serif}
+.graph-assessment-label{fill:#818b99;font-size:9px;font-family:'DM Sans',sans-serif}
+.graph-trend-line{fill:none;stroke:#7771c9;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.graph-trend-point{fill:#fff;stroke:#7771c9;stroke-width:3}
+.graph-legend{display:flex;justify-content:center;gap:18px;margin-top:0;color:#818b99;font-size:9px}
+.graph-legend span{display:flex;align-items:center;gap:6px}
+.graph-legend i{display:block;width:10px;height:10px;border-radius:3px;background:#7097e8}
+.graph-legend .graph-legend-line{width:16px;height:3px;border-radius:2px;background:#7771c9}
+.student-result-summary{width:100%;display:flex;align-items:center;gap:14px;text-align:left;cursor:pointer;transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease}
+.student-result-summary:hover{border-color:#b9b3ed;transform:translateY(-1px);box-shadow:0 8px 22px rgba(64,70,100,.08)}
+.result-summary-main{flex:1;min-width:0}
+.result-summary-main h3{font-size:14px;margin:6px 0}
+.result-summary-main>small{display:block;color:#929baa;font-size:10px}
+.result-summary-main p{max-width:760px;color:#697386;font-size:11px;line-height:1.5;margin:9px 0 0}
+.result-summary-score{min-width:112px;display:grid;justify-items:end;gap:5px}
+.result-summary-score>strong{font-family:Manrope,sans-serif;font-size:20px;color:#333d4d}
+.result-summary-score>strong small{font-family:'DM Sans',sans-serif;font-size:11px;color:#8b95a3;font-weight:600}
+.result-summary-score>span{font-size:10px;color:#7169cb;font-weight:800}
+.result-summary-chevron{color:#98a1ae;flex:none}
+.result-detail-page{display:grid;gap:14px}
+.student-result-detail-page{display:grid;gap:14px}
+.student-result-detail-page .student-results-actions{justify-content:flex-start}
+.result-detail-hero{padding:20px}
+.result-detail-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:15px}
+.result-detail-heading h2{font-family:Manrope,sans-serif;font-size:20px;margin:7px 0 5px;color:#26313d}
+.result-detail-heading p{font-size:11px;color:#8a94a3;margin:0}
+.result-detail-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
+.result-detail-stats>div{border:1px solid #edf0f4;background:#fafbfe;border-radius:10px;padding:12px}
+.result-detail-stats span{display:block;color:#8a94a3;font-size:9px;font-weight:800;letter-spacing:.5px}
+.result-detail-stats strong{display:block;color:#344052;font-family:Manrope,sans-serif;font-size:20px;margin-top:6px}
+.result-detail-stats strong small{font:600 11px 'DM Sans',sans-serif;color:#929baa}
+.result-feedback-panel>p{color:#657080;font-size:12px;line-height:1.65}
+.result-questions-panel>.eyebrow{display:block;margin-bottom:12px}
+.result-questions-panel .answer-review-section:empty{display:none}
+.student-completion-card{max-width:560px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;padding:38px 32px}
+.student-completion-card .confirmation-icon{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;background:#eaf8f1;color:#39a77a;margin-bottom:4px}
+.student-completion-card>.eyebrow{color:#7970cf;font-weight:800;letter-spacing:1px}
+.student-completion-card h1{font-family:Manrope,sans-serif;font-size:30px;color:#26313d;margin:0}
+.student-completion-card>p{margin:0;color:#768293;font-size:14px;line-height:1.55}
+.completion-score{display:grid;justify-items:center;gap:3px;margin:12px 0;padding:16px 32px;border-radius:16px;background:linear-gradient(145deg,#f4f2ff,#edf6ff);border:1px solid #e1e5fa;min-width:150px}
+.completion-score>span{font-size:11px;color:#778197;font-weight:800;text-transform:uppercase;letter-spacing:.7px}
+.completion-score>strong{font:800 48px Manrope,sans-serif;color:#7068cc;line-height:1.15}
+.completion-score>small{font-size:12px;color:#828da0}
+.completion-review-pending{padding:12px 15px!important;border-radius:10px;background:#f7f8fb}
+.completion-quote{margin:8px 0 12px;padding:14px 18px;border-left:3px solid #8278dc;border-radius:0 10px 10px 0;background:#f8f7ff;color:#4e5471;font:italic 15px/1.6 Manrope,sans-serif}
+.student-completion-card .student-dashboard-link{margin-top:4px}
+@media(max-width:700px){.assessment-progress-card{grid-column:1}.assessment-graph{min-height:150px}.graph-assessment-label{font-size:8px}.student-result-summary{align-items:flex-start;padding:14px}.result-summary-score{min-width:74px}.result-summary-score>strong{font-size:16px}.result-detail-stats{grid-template-columns:1fr}.result-detail-heading h2{font-size:17px}}
+@media(max-width:700px){.student-dashboard .assessment-progress-card{padding:15px}.assessment-progress-card .assessment-graph{min-height:0}.assessment-graph-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.assessment-graph-metrics>div{min-height:62px;padding:8px}.assessment-graph-metrics strong{font-size:15px}}
+@media(max-width:700px){.student-completion-card{padding:30px 20px}.student-completion-card h1{font-size:25px}.completion-score>strong{font-size:42px}}
