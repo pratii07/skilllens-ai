@@ -9,7 +9,7 @@ From the repository root, use `npm ci` to install the lockfile versions and `npm
 - `NODE_ENV=production`
 - `MONGODB_URI`: the rotated MongoDB Atlas connection URI
 - `JWT_SECRET`: a fresh random secret with at least 32 characters. Generate one with `openssl rand -base64 48`.
-- `FRONTEND_URL`: the exact HTTPS frontend origin, such as `https://app.example.com`. Multiple origins can be comma-separated.
+- `FRONTEND_URL`: the exact HTTPS frontend origin, such as `https://app.example.com` (no `/api` path). Add the exact Vercel URL shown as the browser's `Origin`; multiple origins can be comma-separated.
 - `PORT`: set by the host if it provides one
 - `INITIAL_MENTOR_NAME`, `INITIAL_MENTOR_EMAIL`, `INITIAL_MENTOR_PASSWORD`: optional bootstrap credentials. When the database has no mentor, the backend creates one and hashes the password. Remove these values from the host after the mentor is created.
 - AI provider keys such as `GEMINI_API_KEY` or `OPENAI_API_KEY` if assessment generation should be enabled.
@@ -18,7 +18,7 @@ Create the Atlas database user with access only to the SkillLens database, and a
 
 ## Frontend
 
-Build the frontend with `npm run build` from the repository root and publish `frontend/dist`. Set `VITE_API_URL` at build time to the backend API URL ending in `/api`, for example `https://api.example.com/api`. If the host proxies `/api` on the frontend domain, the app defaults to the relative `/api` path.
+Build the frontend with `npm run build` from the repository root and publish `frontend/dist`. Set `VITE_API_URL` at build time to the backend API URL ending in `/api`, for example `https://api.example.com/api`. The frontend appends `/api` automatically if it is omitted. If the host proxies `/api` on the frontend domain, the app defaults to the relative `/api` path.
 
 ## Verify after deployment
 

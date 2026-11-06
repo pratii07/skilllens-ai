@@ -1,10 +1,10 @@
 import express from 'express'; import cors from 'cors'; import mongoose from 'mongoose'; import dotenv from 'dotenv'; import {fileURLToPath} from 'url'; import path from 'path'; import User from './models/User.js'; import bcrypt from 'bcryptjs'; import authRoutes from './routes/auth.js'; import assessmentRoutes from './routes/assessments.js'; import {connectDatabase} from './db/connect.js';
 const backendDir=path.dirname(fileURLToPath(import.meta.url)); dotenv.config({path:path.resolve(backendDir,'../.env')});
 const production=process.env.NODE_ENV==='production';
-const allowedOrigins=(process.env.FRONTEND_URL||'').split(',').map(origin=>origin.trim()).filter(Boolean);
+const allowedOrigins=(process.env.FRONTEND_URL||'').split(',').map(value=>{try{return new URL(value.trim()).origin}catch{return ''}}).filter(Boolean);
 if(production&&(!process.env.MONGODB_URI||!process.env.JWT_SECRET||process.env.JWT_SECRET.length<32||!allowedOrigins.length))throw new Error('Production requires MONGODB_URI, FRONTEND_URL, and a JWT_SECRET of at least 32 characters');
 const app = express();
-app.use(cors({origin(origin,callback){if(!production||!origin||allowedOrigins.includes(origin))return callback(null,true);return callback(null,false)}}));
+app.use(cors({origin(origin,callback){if(!production||!origin)return callback(null,true);try{return callback(null,allowedOrigins.includes(new URL(origin).origin))}catch{return callback(null,false)}}}));
 app.use(express.json({ limit: '5mb' }));
 app.get('/api/health', (req, res) => {const mongo=mongoose.connection.readyState===1?'connected':'disconnected';return res.status(mongo==='connected'?200:503).json({status:mongo==='connected'?'ok':'degraded',mongo})});
 app.use('/api',(req,res,next)=>{if(production&&mongoose.connection.readyState!==1)return res.status(503).json({error:'Database is unavailable. Please try again shortly.'});next()});

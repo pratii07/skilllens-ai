@@ -2,7 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import { LayoutDashboard, ClipboardCheck, BarChart3, Users, CalendarDays, BookOpen, Settings, HelpCircle, Search, Bell, Plus, ChevronRight, Clock3, FileText, Trash2, Pencil, X, CheckCircle2, ArrowLeft, Send } from 'lucide-react';
 
-const api = axios.create({ baseURL: import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://127.0.0.1:4000/api' : '/api') });
+const configuredApiUrl=import.meta.env.VITE_API_URL||(import.meta.env.DEV?'http://127.0.0.1:4000/api':'/api');
+const trimmedApiUrl=configuredApiUrl.replace(/\/+$/,'');
+const apiBaseUrl=trimmedApiUrl==='/api'||trimmedApiUrl.endsWith('/api')?trimmedApiUrl:`${trimmedApiUrl}/api`;
+const api = axios.create({ baseURL: apiBaseUrl });
 api.interceptors.request.use((config) => { const session = load('skilllens_user', null); if (session?.token) config.headers.Authorization = 'Bearer ' + session.token; return config });
 const svgFlowchartDataUri = (svg) => { if (!svg || typeof svg !== 'string') return ''; if (svg.startsWith('data:image')) return svg; const encoded = encodeURIComponent(svg.startsWith('<svg') ? svg : `<svg xmlns="http://www.w3.org/2000/svg" width="700" height="420"><rect width="700" height="420" fill="white"/><text x="350" y="210" text-anchor="middle" font-family="Arial" font-size="24">${svg}</text></svg>`); return `data:image/svg+xml;charset=utf-8,${encoded}` };
 const normalizeSection = (section, type) => type === 'Flowchart' || type === 'HTML/CSS Upload' || type === 'Coding / Problem Solving' ? 'Task / Practical' : section === 'Practical' || section === 'Task / Practical' ? 'Task / Practical' : 'MCQ';
